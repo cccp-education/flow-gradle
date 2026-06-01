@@ -1,0 +1,82 @@
+= BACKLOG — Flow Gradle (Oakland)
+:toc:
+
+_Date création_ : 2026-06-01
+_Version_ : 0.1.0-SNAPSHOT
+
+'''
+== Vision Produit
+
+Un plugin Gradle N4 qui **orchestre le workflow de merge** : quand la review (Baltimore)
+est OK et les tickets (Harlem) sont prêts, il déclenche le merge, l'auto-close des tickets
+et le pipeline CI (runner-gradle).
+
+'''
+== User Stories
+
+=== US-FLW-01 — En tant que lead dev, je veux visualiser le statut complet du flow
+
+*Priorité* : P1
+*EPIC* : FLW-2
+
+.Critères d'acceptation
+- `flowStatus` affiche : tickets ouverts → PRs en cours → review IA (score) → review humaine (approved?) → prêt à merge?
+- La vue est en console et en AsciiDoc
+- Les blocages sont signalés (review pas OK, gate non passée)
+
+=== US-FLW-02 — En tant que lead dev, je veux merger quand toutes les gates passent
+
+*Priorité* : P1
+*EPIC* : FLW-3
+
+.Critères d'acceptation
+- `flowMerge` vérifie toutes les quality gates avant merge
+- Gates : review IA ≥ seuil, review humaine approved, CI passe, conventional commits OK, pas de secrets
+- Si toutes les gates passent → merge exécuté via GitHub API
+- Si une gate échoue → message clair, merge bloqué
+
+=== US-FLW-03 — En tant que lead dev, je veux que les tickets se ferment automatiquement après merge
+
+*Priorité* : P2
+*EPIC* : FLW-3
+
+.Critères d'acceptation
+- `flowClose` détecte les "Fixes #XX" / "Closes #XX" dans le message de merge
+- Les tickets référencés sont automatiquement fermés
+- Un commentaire est ajouté sur chaque ticket : "Closed by PR #YY (flow-gradle)"
+
+=== US-FLW-04 — En tant que lead dev, je veux déclencher le CI après merge
+
+*Priorité* : P2
+*EPIC* : FLW-4
+
+.Critères d'acceptation
+- `flowCICD` déclenche le pipeline runner-gradle après merge
+- Si le merge concerne un borough N2 → publishToMavenLocal + test cross-borough
+- Le statut CI est rapporté dans le flowStatus
+
+'''
+== Dette Technique
+
+[cols="1,5,2", options="header"]
+|===
+| ID | Description | Priorité
+| DT-01 | Aucune — projet neuf | -
+|===
+
+== Risques
+
+[cols="1,3,2,2", options="header"]
+|===
+| ID | Risque | Impact | Probabilité
+| R-01 | Merge automatique sur faux positif (toutes les gates passent mais le code est mauvais) | Critique | Faible
+| R-02 | Conflit de merge non détecté avant exécution | Bloquant | Moyenne
+| R-03 | GitHub API rate limit sur merge/close en rafale | Faible | Faible
+|===
+
+== Notes
+
+* Le merge reste sous contrôle humain — `flowMerge` ne s'exécute que si la PR est approved
+* Dépend de ticket-gradle et review-gradle en compileOnly
+* GITHUB_TOKEN obligatoire en env var
+* Le flow complet : Atlanta (backlog) → Harlem (tickets) → code → Baltimore (review) → Oakland (merge) → New Jersey (CI)

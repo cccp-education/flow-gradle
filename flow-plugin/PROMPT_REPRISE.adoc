@@ -1,0 +1,13 @@
+= PROMPT_REPRISE — flow-gradle (Oakland)
+
+== Mission en cours
+Session 000 — Bootstrap gouvernance + cadrage architecture.
+
+== État actuel
+- Projet créé : `flow-gradle/` + `flow-plugin/`
+- Prochaine : Session 001 — Plugin Gradle stub
+
+== Règles
+1. COMMITS/GIT — INTERDIT sans permission
+2. ZERO secret en dur (GITHUB_TOKEN env var)
+3. DAG N4 — consomme ticket-gradle + review-gradle

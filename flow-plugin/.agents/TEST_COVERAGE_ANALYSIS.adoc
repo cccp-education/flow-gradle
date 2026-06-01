@@ -1,0 +1,2 @@
+= TEST_COVERAGE_ANALYSIS — flow-gradle (Oakland)
+Aucun test — session 000 bootstrap uniquement.

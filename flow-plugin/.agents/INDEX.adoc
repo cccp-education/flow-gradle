@@ -1,0 +1,46 @@
+= INDEX — Flow Gradle (Oakland)
+:toc:
+
+_Règles absolues_ : voir `AGENT.adoc`
+_DAG_ : N4 — Plugin Gradle d'orchestration merge/close/CI
+_Dépendance N4_ : ticket-gradle (compileOnly), review-gradle (compileOnly)
+
+_Dernière mise à jour_ : 2026-06-01 (Session 000 — Bootstrap)
+_Session terminée_ : 000 — Bootstrap gouvernance + cadrage architecture
+_Prochaine session_ : 001 — Implémentation plugin Gradle stub
+
+== Roadmap
+
+[cols="1,3,2,2", options="header"]
+|===
+| EPIC | Description | Statut | Priorité
+| FLW-0 | Bootstrap gouvernance + cadrage architecture | ✅ TERMINÉ | P0
+| FLW-1 | Plugin Gradle stub + build structure | À faire | P0
+| FLW-2 | flowStatus — statut complet du flow ticket→PR→review→merge | À faire | P1
+| FLW-3 | flowMerge + flowClose — merge avec gates + auto-close tickets | À faire | P1
+| FLW-4 | flowCICD + flowReport — CI trigger + rapport merge | À faire | P2
+|===
+
+== Portefeuille — 18 Boroughs
+
+|===
+| Borough | Projet | DAG | Sessions
+| Newark 🔴 | training-gradle | N2 | 010
+| Manhattan | planner-gradle | N2 | 008
+| Brooklyn | codex-gradle | N2 | 018
+| Queens | codebase-gradle | N1 | 046
+| The Bronx | quizz-benchmark-gradle | N2 | 006
+| Staten Island | magic-stick | N2 | 004
+| New Jersey | runner-gradle | N3 | 011
+| Compton | waiter-gradle | N2 | 000
+| Détroit | capsule-gradle | N2 | 000
+| South Central | workspace-gradle | N4 | 001
+| Long Island 🔵 | workspace-agent (IntelliJ) | N-IDE | 000
+| Watts 🟠 | hyperframes-gradle | N2 | 000
+| Chiraq 🟤 | readme-gradle | N2 | 003
+| New Orleans 🟢 | document-gradle | N2 | 000
+| Atlanta | agile-gradle | N4 | 000
+| Harlem | ticket-gradle | N4 | 000
+| Baltimore | review-gradle | N4 | 000
+| Oakland | flow-gradle | N4 | 000
+|===

@@ -1,0 +1,16 @@
+= SESSION_PROCEDURE — flow-gradle
+
+== Procédure de Fin de Session — 6 Étapes Obligatoires
+
+. *Rapport de session* — Créer `.agents/sessions/NNN-sujet.adoc`
+. *Mise à jour PROMPT_REPRISE.adoc* — Contexte reprise N+1 (max 70 lignes)
+. *Mise à jour INDEX.adoc* — Session, roadmap, statut EPICs
+. *Archivage COMPLETED_TASKS_ARCHIVE.adoc*
+. *Vérification* — `git status`, absence de secrets, build compile
+. *Tests* — `.agents/TEST_COVERAGE_ANALYSIS.adoc` (si tests modifiés)
+
+== Rappels
+* N4 — consomme ticket-gradle + review-gradle
+* Le merge reste sous contrôle humain (approval PR obligatoire)
+* GITHUB_TOKEN obligatoire en env var
+* Aucun commit sans permission
