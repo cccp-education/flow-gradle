@@ -7,7 +7,7 @@ _Dépendance N4_ : ticket-gradle (compileOnly), review-gradle (compileOnly)
 
 _Dernière mise à jour_ : 2026-06-01 (Session 000 — Bootstrap)
 _Session terminée_ : 000 — Bootstrap gouvernance + cadrage architecture
-_Prochaine session_ : 001 — Implémentation plugin Gradle stub
+_Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
 
 == Roadmap
 

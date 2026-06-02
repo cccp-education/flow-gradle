@@ -1,0 +1,39 @@
+= Session 000 — Bootstrap Flow Gradle (Oakland)
+:date: 2026-06-01
+:score: 10/10
+:type: bootstrap
+:epic: FLW-0
+
+== Objectif
+Bootstrap gouvernance + cadrage architecture du borough Oakland — plugin N4 d'orchestration merge/close/CI.
+
+== Réalisations
+- [x] Création structure `flow-gradle/` + `flow-plugin/`
+- [x] `AGENT.adoc` — workflow merge/close/CI, quality gates, règles absolues
+- [x] `BACKLOG.adoc` — 4 user stories FLW-1→FLW-4, dette technique, risques
+- [x] `INDEX.adoc` — roadmap 5 EPICs (FLW-0→FLW-4), portefeuille 18 boroughs
+- [x] `SESSION_CHECKLIST.adoc` — hook ouverture/fermeture
+- [x] `SESSION_PROCEDURE.adoc` — procédure 6 étapes
+- [x] `SESSIONS_HISTORY.adoc` — historique sessions
+- [x] `PROMPT_REPRISE.adoc` — contexte reprise session 001
+- [x] `.agents/archives/` — créé
+- [x] `TEST_COVERAGE_ANALYSIS.adoc` — initial (vide)
+- [x] Git init + `settings.gradle.kts` + `build.gradle.kts` + `.gitignore`
+- [x] Repo GitHub public Apache 2.0 + push
+  (https://github.com/cheroliv/flow-gradle)
+
+== Architecture
+*DAG N4* — consomme ticket-gradle + review-gradle (compileOnly). GitHub API wrapper.
+
+Pipeline complet :
+  Atlanta (backlog) → Harlem (tickets) → code → Baltimore (review) → Oakland (merge) → New Jersey (CI)
+
+== Tâches Gradle cibles
+- `flowStatus` — statut flow (tickets → PRs → review → ready?)
+- `flowMerge` — merge si toutes les gates passent
+- `flowClose` — auto-close tickets liés après merge
+- `flowCICD` — déclencher pipeline CI
+- `flowReport` — rapport de merge (AsciiDoc)
+
+== Prochaine session
+Session 001 — Plugin Gradle stub (EPIC FLW-1).

@@ -1,13 +1,19 @@
 = PROMPT_REPRISE — flow-gradle (Oakland)
 
 == Mission en cours
-Session 000 — Bootstrap gouvernance + cadrage architecture.
+Session 001 — Plugin Gradle stub (EPIC FLW-1).
 
 == État actuel
-- Projet créé : `flow-gradle/` + `flow-plugin/`
-- Prochaine : Session 001 — Plugin Gradle stub
+- Gouvernance complète — AGENT, BACKLOG, INDEX, SESSION_CHECKLIST, SESSION_PROCEDURE
+- Repo GitHub créé : https://github.com/cheroliv/flow-gradle
+- Prochaine : Session 002 (après stub)
 
 == Règles
 1. COMMITS/GIT — INTERDIT sans permission
 2. ZERO secret en dur (GITHUB_TOKEN env var)
-3. DAG N4 — consomme ticket-gradle + review-gradle
+3. DAG N4 — consomme ticket-gradle + review-gradle (compileOnly)
+
+== Session 001 — Tâches
+- [ ] Créer structure build Gradle pour flow-plugin/ (src/main/kotlin, build.gradle.kts)
+- [ ] Définir l'extension FlowExtension + FlowPlugin.kt stub
+- [ ] ./gradlew compileKotlin passe
