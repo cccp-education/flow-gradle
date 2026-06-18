@@ -21,7 +21,7 @@ _Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
 | FLW-4 | flowCICD + flowReport — CI trigger + rapport merge | À faire | P2
 |===
 
-== Portefeuille — 18 Boroughs
+== Portefeuille — 26 Boroughs
 
 |===
 | Borough | Projet | DAG | Sessions
@@ -43,4 +43,12 @@ _Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
 | Harlem | ticket-gradle | N4 | 000
 | Baltimore | review-gradle | N4 | 000
 | Oakland | flow-gradle | N4 | 000
+| Philly | jhipster-gradle-plugins | N2 | 005
+| Bushwick 🟤 | bakery-gradle | N2 | 062
+| MIAMI 🌴 | slider-gradle | N2 | 007
+| MEMPHIS 🎸 | workspace-bom | N0 | 13 commits
+| HTOWN 🚀 | plantuml-gradle | N2 | 145
+| Grand Central 🟡 | graphify-gradle | N0 | 011
+| Liberty 🗽 | api-key-pool-gradle | N0 | 002
+| ALGER 🟡 | dashboard-gradle | N3 | 000
 |===
