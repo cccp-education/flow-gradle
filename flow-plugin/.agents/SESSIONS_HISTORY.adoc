@@ -2,4 +2,5 @@
 |===
 | # | Date | Type | Sujet | Score
 | 000 | 2026-06-01 | bootstrap | FLW-0 — Bootstrap | ✅ TERMINÉ
+| 001 | 2026-07-03 | dev | Plugin stub créé CNV-6 natif — 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création, compileKotlin SUCCESS | ✅ TERMINÉ
 |===

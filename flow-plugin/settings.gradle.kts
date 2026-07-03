@@ -14,6 +14,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "flow-gradle"
-
-include("flow-plugin")
+rootProject.name = "flow-plugin"

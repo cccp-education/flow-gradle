@@ -5,9 +5,9 @@ _Règles absolues_ : voir `AGENT.adoc`
 _DAG_ : N4 — Plugin Gradle d'orchestration merge/close/CI
 _Dépendance N4_ : ticket-gradle (compileOnly), review-gradle (compileOnly)
 
-_Dernière mise à jour_ : 2026-06-01 (Session 000 — Bootstrap)
-_Session terminée_ : 000 — Bootstrap gouvernance + cadrage architecture
-_Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
+_Dernière mise à jour_ : 2026-07-03 (Session 001 — Plugin stub CNV-6 natif)
+_Session terminée_ : 001 — Plugin stub créé CNV-6 natif — 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création, compileKotlin SUCCESS ✅ TERMINÉ
+_Prochaine session_ : 002 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge
 
 == Roadmap
 
@@ -15,7 +15,7 @@ _Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
 |===
 | EPIC | Description | Statut | Priorité
 | FLW-0 | Bootstrap gouvernance + cadrage architecture | ✅ TERMINÉ | P0
-| FLW-1 | Plugin Gradle stub + build structure | À faire | P0
+| FLW-1 | Plugin Gradle stub + build structure | ✅ TERMINÉ | P0
 | FLW-2 | flowStatus — statut complet du flow ticket→PR→review→merge | À faire | P1
 | FLW-3 | flowMerge + flowClose — merge avec gates + auto-close tickets | À faire | P1
 | FLW-4 | flowCICD + flowReport — CI trigger + rapport merge | À faire | P2
@@ -42,7 +42,7 @@ _Prochaine session_ : 001 — Plugin Gradle stub (EPIC FLW-1)
 | Atlanta | agile-gradle | N4 | 000
 | Harlem | ticket-gradle | N4 | 000
 | Baltimore | review-gradle | N4 | 000
-| Oakland | flow-gradle | N4 | 000
+| Oakland | flow-gradle | N4 | 001
 | Philly | jhipster-gradle-plugins | N2 | 005
 | Bushwick 🟤 | bakery-gradle | N2 | 062
 | MIAMI 🌴 | slider-gradle | N2 | 007

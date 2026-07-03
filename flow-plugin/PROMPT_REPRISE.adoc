@@ -1,19 +1,27 @@
 = PROMPT_REPRISE — flow-gradle (Oakland)
 
 == Mission en cours
-Session 001 — Plugin Gradle stub (EPIC FLW-1).
+Session 002 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge.
 
-== État actuel
-- Gouvernance complète — AGENT, BACKLOG, INDEX, SESSION_CHECKLIST, SESSION_PROCEDURE
-- Repo GitHub créé : https://github.com/cheroliv/flow-gradle
-- Prochaine : Session 002 (après stub)
+== État actuel (post-session 001)
+- Plugin stub créé : `flow-plugin/` avec 4 conventions CNV-6 natif (gradle-plugin + publishing + functional-test + cucumber)
+- Classe stub : FlowPlugin.kt
+- BUILD SUCCESS
+- EPIC FLW-1 ✅ TERMINÉ (Plugin stub CNV-6 natif)
+
+== Objectifs session 002
+- Implémenter `flowStatus` — statut complet du flow ticket→PR→review→merge
+- Définir FlowExtension (config : gates, stratégie merge, CI trigger)
+- Consommer ticket-gradle + review-gradle (compileOnly)
+
+== Contexte session 001 (terminée)
+- 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création
+- compileKotlin SUCCESS, build SUCCESS
+
+== Prochaine session après 002
+Session 003 — flowMerge + flowClose (EPIC FLW-3) : merge avec gates + auto-close tickets
 
 == Règles
 1. COMMITS/GIT — INTERDIT sans permission
 2. ZERO secret en dur (GITHUB_TOKEN env var)
 3. DAG N4 — consomme ticket-gradle + review-gradle (compileOnly)
-
-== Session 001 — Tâches
-- [ ] Créer structure build Gradle pour flow-plugin/ (src/main/kotlin, build.gradle.kts)
-- [ ] Définir l'extension FlowExtension + FlowPlugin.kt stub
-- [ ] ./gradlew compileKotlin passe
