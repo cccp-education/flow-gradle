@@ -31,6 +31,21 @@ Cas d'usage :
 === 6. ZERO secret/token/api key en dur (⚠️ GITHUB_TOKEN en env var uniquement)
 === 7. MERGE REQUIERT REVIEW HUMAINE — le flow vérifie l'approval PR avant merge
 
+== Conventions Plugins (ABIDJAN N0)
+
+Flow consomme les convention plugins centralises `education.cccp.build` v0.0.3 (stub CNV-6 natif) :
+
+[cols="2,5"]
+|===
+| Plugin ID | Role
+| `education.cccp.build.gradle-plugin` | java-gradle-plugin + kotlin-jvm + test JUnit + withSourcesJar/JavadocJar + mavenLocal + deps junit test
+| `education.cccp.build.publishing` | POM Maven Central + signing conditionnel + relocation + publicationType
+| `education.cccp.build.functional-test` | Source set functionalTest + GradleTestKit + task + check.dependsOn
+| `education.cccp.build.cucumber` | Source set features/scenarios + cucumberTest task + exclusion jupiter
+|===
+
+Ces 4 plugins sont appliques des la creation du stub (CNV-6 natif), zero redondance de build.
+
 == Tâches Principales
 
   ./gradlew flowStatus             → statut du flow (tickets → PRs → review → ready?)
