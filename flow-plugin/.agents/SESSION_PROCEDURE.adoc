@@ -13,7 +13,7 @@
 * N4 — consomme ticket-gradle + review-gradle
 * Le merge reste sous contrôle humain (approval PR obligatoire)
 * GITHUB_TOKEN obligatoire en env var
-* Aucun commit sans permission
+* Commit/push/merge autorisés (décision pilote 2026-09-17). Ne JAMAIS commiter de secret.
 
 . [ ] 7. Synchronisation backlog — `BACKLOG.adoc` + `TODO.adoc` (voir detail ci-dessous)
 
