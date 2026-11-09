@@ -15,7 +15,6 @@ pluginManagement.resolutionStrategy.eachPlugin {
     }
 }
 
-
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
