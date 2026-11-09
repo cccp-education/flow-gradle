@@ -52,3 +52,7 @@ _Prochaine session_ : 002 — flowStatus (EPIC FLW-2) : statut complet du flow t
 | Liberty 🗽 | api-key-pool-gradle | N0 | 002
 | ALGER 🟡 | dashboard-gradle | N3 | 000
 |===
+
+== Session 001 — JitPack mirror (CNV-16)
+
+Publication JitPack de flow-plugin 0.0.1. JitPack : 0.0.1 — POM HTTP 200.

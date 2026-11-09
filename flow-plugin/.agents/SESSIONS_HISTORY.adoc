@@ -4,3 +4,9 @@
 | 000 | 2026-06-01 | bootstrap | FLW-0 — Bootstrap | ✅ TERMINÉ
 | 001 | 2026-07-03 | dev | Plugin stub créé CNV-6 natif — 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création, compileKotlin SUCCESS | ✅ TERMINÉ
 |===
+
+== Session 001 — JitPack mirror (CNV-16) — 2026-11-09
+
+Publication JitPack de flow-plugin 0.0.1. JitPack : 0.0.1 — POM HTTP 200. Shim `useModule` pour
+`education.cccp.build.*` (tag JitPack `0.0.15`). Rapport
+`flow-plugin/.agents/sessions/001-jitpack-mirror.adoc`.
