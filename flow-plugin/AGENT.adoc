@@ -23,8 +23,8 @@ Cas d'usage :
 
 == Règles Absolues
 
-=== 1. COMMITS/GIT — INTERDICTION FORMELLE sans permission pour merge/push
-=== 2. PUBLISH — INTERDICTION FORMELLE sans permission
+=== 1. COMMITS/GIT — AUTORISÉS (décision pilote 2026-11-11 : tous repos publics)
+=== 2. PUBLISH — ACCORD PILOTE PERMANENT (décisions 2026-10-31 + 2026-11-11)
 === 3. DAG N4 — consomme N4 (ticket-gradle, review-gradle), jamais importé par N3/N2
 === 4. PROCEDURE DE FIN DE SESSION — 6 ETAPES OBLIGATOIRES
 === 5. HOOK OUVERTURE — Checklist SESSION_CHECKLIST.adoc obligatoire
