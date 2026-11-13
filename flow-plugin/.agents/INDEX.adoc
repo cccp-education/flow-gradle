@@ -66,3 +66,9 @@ cessent d'être publiés pour `foundry/public/**`). Shim `useModule` aligné sur
 `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`. Aucune CI déclenchée.
 `FLW-2` reporté en session 003 (collision préexistante du numéro 001). Rapport
 `.agents/sessions/002-cnv-17-jitpack-channel.adoc`.
+
+== Session 003 — EAGER : publication JitPack canal unique (2026-11-14)
+
+Alignement EAGER (AGENT/PROMPT_REPRISE) : JitPack canal unique ;
+Central/Portal retirés. Zéro code. Rapport
+`.agents/sessions/003-eager-publication-jitpack-only.adoc`.

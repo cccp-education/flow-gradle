@@ -21,3 +21,9 @@ servie `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`. Aucune CI
 déclenchée ; aucun test local. `FLW-2` reporté en session 003 (collision
 préexistante du numéro 001). Rapport
 `.agents/sessions/002-cnv-17-jitpack-channel.adoc`.
+
+== Session 003 — EAGER : publication JitPack canal unique — 2026-11-14
+
+Alignement EAGER : JitPack canal unique ; Maven Central/Sonatype et
+Gradle Plugin Portal **retirés**. Aucun code, aucun test, aucune
+publication. Rapport `.agents/sessions/003-eager-publication-jitpack-only.adoc`.
