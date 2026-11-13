@@ -80,3 +80,16 @@ et le pipeline CI (runner-gradle).
 * Dépend de ticket-gradle et review-gradle en compileOnly
 * GITHUB_TOKEN obligatoire en env var
 * Le flow complet : Atlanta (backlog) → Harlem (tickets) → code → Baltimore (review) → Oakland (merge) → New Jersey (CI)
+
+'''
+== Historique — Session 002 — CNV-17 (JitPack canal unique)
+
+* Décision pilote : JitPack = **canal unique** des artefacts publics. Maven
+  Central (nmcp) et le Gradle Plugin Portal ne sont plus publiés pour
+  `foundry/public/**` ; `foundry/private/**` et `office/**` exclus.
+* `flow-plugin 0.0.1` est servi en
+  `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`.
+* Shim `conventions-plugin:0.0.17`, plateforme N0 `workspace-bom:0.0.136`.
+* `FLW-2` (`flowStatus`) reste ouvert ; reporté en session 003 (collision
+  préexistante du numéro 001).
+* Rapport : `.agents/sessions/002-cnv-17-jitpack-channel.adoc`

@@ -5,9 +5,9 @@ _Règles absolues_ : voir `AGENT.adoc`
 _DAG_ : N4 — Plugin Gradle d'orchestration merge/close/CI
 _Dépendance N4_ : ticket-gradle (compileOnly), review-gradle (compileOnly)
 
-_Dernière mise à jour_ : 2026-07-03 (Session 001 — Plugin stub CNV-6 natif)
-_Session terminée_ : 001 — Plugin stub créé CNV-6 natif — 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création, compileKotlin SUCCESS ✅ TERMINÉ
-_Prochaine session_ : 002 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge
+_Dernière mise à jour_ : 2026-11-13 (Session 002 — CNV-17 : JitPack **canal unique** des artefacts publics ; shim `conventions-plugin:0.0.17`, BOM `0.0.136`, coordonnée `flow-plugin:0.0.1`.)
+_Session terminée_ : 002 — CNV-17 JitPack canal unique (documentation) ✅ TERMINÉ
+_Prochaine session_ : 003 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge
 
 == Roadmap
 
@@ -56,3 +56,13 @@ _Prochaine session_ : 002 — flowStatus (EPIC FLW-2) : statut complet du flow t
 == Session 001 — JitPack mirror (CNV-16)
 
 Publication JitPack de flow-plugin 0.0.1. JitPack : 0.0.1 — POM HTTP 200.
+
+== Session 002 — CNV-17 : JitPack canal unique — 2026-11-13
+
+JitPack devient le canal **unique** des artefacts publics (Central/Portal
+cessent d'être publiés pour `foundry/public/**`). Shim `useModule` aligné sur
+`conventions-plugin:0.0.17` (racine + sous-build), plateforme N0 JitPack
+`workspace-bom:0.0.136`. Coordonnée servie :
+`com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`. Aucune CI déclenchée.
+`FLW-2` reporté en session 003 (collision préexistante du numéro 001). Rapport
+`.agents/sessions/002-cnv-17-jitpack-channel.adoc`.

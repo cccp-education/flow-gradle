@@ -1,0 +1,56 @@
+= Session 002 — CNV-17 : JitPack canal unique (publication)
+:toc: left
+:icons: font
+
+:session: 002
+:date: 2026-11-13
+:type: cross-borough / JitPack
+:statut: TERMINÉE
+
+== Mission
+
+Clôture de **CNV-17** (décision pilote « la totalité vers JitPack ») pour
+`flow-gradle` : JitPack est le **canal unique** des artefacts publics ; Maven
+Central (nmcp) et le Gradle Plugin Portal ne sont plus publiés pour
+`foundry/public/**`. Un artefact = un canal = un nom = une version.
+`foundry/private/**` et `office/**` exclus.
+
+== Changements (état mesuré)
+
+* `flow-plugin/settings.gradle.kts` et `flow-gradle/settings.gradle.kts` : shim
+  `useModule` des conventions `education.cccp.build.*` vers
+  `com.github.cccp-education.conventions-gradle:conventions-plugin:0.0.17`
+  (JitPack) + `maven("https://jitpack.io")` en `pluginManagement` et
+  `dependencyResolutionManagement`.
+* `flow-plugin/build.gradle.kts` : plateforme N0 JitPack
+  `com.github.cccp-education.workspace-bom:workspace-bom:0.0.136` ; les 4
+  conventions CNV-6 sont déclarées `0.0.14` et résolues via le shim `0.0.17`.
+  Version publiée `0.0.1`. Coordonnée servie :
+  `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1` (S-001).
+  Aucun code Kotlin modifié.
+
+== Preuves
+
+* Lecture du build : plus aucune coordonnée `education.cccp:<artefact>` en
+  dépendance ; BOM et conventions résolus en coordonnées JitPack.
+* Table HTTP 200 du cadrage CNV-17
+  (`conventions-gradle/conventions-plugin/.agents/CADRAGE_EPIC_CNV_17_JITPACK_PRIMARY.adoc`
+  §3.3) : `flow-plugin 0.0.1` ✅.
+* Aucune CI déclenchée (pas de workflow) ; aucun test local (Local = Build,
+  Tests = CI).
+
+== Fichiers touchés (documentation uniquement)
+
+`.agents/sessions/002-cnv-17-jitpack-channel.adoc`, `.agents/SESSIONS_HISTORY.adoc`,
+`.agents/INDEX.adoc`, `BACKLOG.adoc`, `PROMPT_REPRISE.adoc`.
+
+== Note de numérotation
+
+Collision préexistante : `001` sert à la session de développement (stub CNV-6)
+et à `001-jitpack-mirror.adoc` (CNV-16). Cette clôture prend `002` ; `FLW-2`
+(`flowStatus`) est reportée en `003`.
+
+== Suite
+
+Maintenance. `FLW-2` (statut ticket→PR→review→merge) reste la prochaine US
+actionnable.

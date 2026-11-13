@@ -1,27 +1,43 @@
-= PROMPT_REPRISE — flow-gradle (Oakland)
+= PROMPT_REPRISE — flow-gradle (Oakland) — Session 002 (close) — CNV-17 JitPack canal unique
+:session: 002
+:date: 2026-11-13
+:etat: TERMINÉE
+:epic_actif: CNV-17 (JitPack canal unique) — clôture documentaire
+:epic_suivant: FLW-2 (flowStatus) — session 003
 
-== Mission en cours
-Session 002 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge.
+== Session 002 terminée — CNV-17 (JitPack canal unique)
 
-== État actuel (post-session 001)
-- Plugin stub créé : `flow-plugin/` avec 4 conventions CNV-6 natif (gradle-plugin + publishing + functional-test + cucumber)
-- Classe stub : FlowPlugin.kt
-- BUILD SUCCESS
-- EPIC FLW-1 ✅ TERMINÉ (Plugin stub CNV-6 natif)
+Décision pilote : « la totalité vers JitPack ». JitPack est le **canal unique**
+des artefacts publics ; Maven Central (nmcp) et le Gradle Plugin Portal ne sont
+plus publiés pour `foundry/public/**`. Un artefact = un canal = un nom = une
+version. `foundry/private/**` et `office/**` exclus.
 
-== Objectifs session 002
-- Implémenter `flowStatus` — statut complet du flow ticket→PR→review→merge
-- Définir FlowExtension (config : gates, stratégie merge, CI trigger)
-- Consommer ticket-gradle + review-gradle (compileOnly)
+* Shim `useModule` : `education.cccp.build.*` →
+  `com.github.cccp-education.conventions-gradle:conventions-plugin:0.0.17`
+  (racine `flow-gradle` + sous-build `flow-plugin`).
+* Plateforme N0 : `com.github.cccp-education.workspace-bom:workspace-bom:0.0.136`.
+* Coordonnée servie : `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`.
+* Aucune CI déclenchée (pas de workflow) ; aucun test local (Local = Build,
+  Tests = CI). Zéro code Kotlin modifié.
 
-== Contexte session 001 (terminée)
-- 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création
-- compileKotlin SUCCESS, build SUCCESS
+*Rapport* : `.agents/sessions/002-cnv-17-jitpack-channel.adoc`
 
-== Prochaine session après 002
-Session 003 — flowMerge + flowClose (EPIC FLW-3) : merge avec gates + auto-close tickets
+*Note* : collision préexistante du numéro `001` (dev stub + miroir CNV-16) —
+la clôture prend `002` et `FLW-2` passe en `003`.
 
-== Règles
-1. COMMITS/GIT — INTERDIT sans permission
-2. ZERO secret en dur (GITHUB_TOKEN env var)
-3. DAG N4 — consomme ticket-gradle + review-gradle (compileOnly)
+== Prochaine mission (session 003) — FLW-2 flowStatus
+
+Statut complet du flow ticket→PR→review→merge.
+
+. Implémenter `flowStatus` (console + AsciiDoc)
+. Définir `FlowExtension` (gates, stratégie de merge, CI trigger)
+. Consommer `ticket-gradle` + `review-gradle` en `compileOnly`
+. Signaler les blocages (review non OK, gate non passée)
+
+== Rappels
+
+- DAG N4 — consomme ticket-gradle + review-gradle (compileOnly)
+- Merge sous contrôle humain (`flowMerge` exige une PR approved)
+- `GITHUB_TOKEN` en variable d'environnement uniquement
+- Publication : JitPack uniquement (tag `vX.Y.Z`, version servie `X.Y.Z`)
+- Local = Build, Tests = CI ; commits autorisés (décision pilote 2026-11-11)
