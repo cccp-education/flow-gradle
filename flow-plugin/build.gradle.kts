@@ -9,7 +9,7 @@ group = "education.cccp"
 version = "0.0.1"
 
 dependencies {
-    implementation(platform("education.cccp:workspace-bom:0.0.4"))
+    implementation(platform("com.github.cccp-education.workspace-bom:workspace-bom:0.0.136"))
 
     implementation(kotlin("stdlib-jdk8"))
 
