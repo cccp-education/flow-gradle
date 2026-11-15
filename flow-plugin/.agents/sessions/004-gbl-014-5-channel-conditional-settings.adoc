@@ -1,0 +1,66 @@
+= Session 004 — GBL-014-5 / GBL-014-4 : settings conditionnels au canal
+:toc: left
+:icons: font
+
+:session: 004
+:date: 2026-11-15
+:type: cross-borough / build + publication (GBL-014)
+:statut: TERMINÉE
+
+== Contexte
+
+Session globale 229 (2026-11-15). Décision pilote « option B » (2026-11-14) : le
+canal de publication est une **propriété du build**
+(`-Pchannel=central|jitpack`, défaut `jitpack`), jamais une branche. GBL-014-5
+rend les `settings.gradle.kts` conditionnels ; GBL-014-4 repointe le shim des
+conventions sur le tag courant.
+
+Références : `AGENTS.adoc` § « Publication (Règle 2) », cadrage
+`.agents/CADRAGE_EPIC_GBL_014_DUAL_CHANNEL.adoc` (racine workspace).
+
+== Changements (état mesuré)
+
+* `a5d9da1` — **GBL-014-5** : `settings.gradle.kts` (racine **et**
+  `flow-plugin/settings.gradle.kts`) conditionnels. Le repository JitPack et le
+  shim `useModule` (`education.cccp.build.*`) ne sont déclarés que si
+  `channel == "jitpack"` ; `dependencyResolutionManagement` JitPack idem.
+  Un build `-Pchannel=central` ne résout donc que les markers `education.cccp.*`.
+* `17fbff3` — **GBL-014-4** : shim repoinné de `0.0.18` à
+  `com.github.cccp-education.conventions-gradle:conventions-plugin:0.0.19`
+  (racine + sous-build).
+
+Aucun code Kotlin modifié ; version publiée inchangée (`flow-plugin` 0.0.1).
+
+== Preuves
+
+|===
+| Élément | Statut
+| `git log` du 2026-11-15 | `a5d9da1`, `17fbff3` (2 commits, working tree propre)
+| Diff | 2 `settings.gradle.kts` (+30/−16 puis +1/−1)
+| CI du dépôt | n/a (aucun workflow)
+| `verifyChannel` (GBL-014-4) | **tâche absente** : le shim est `0.0.19` (la tâche n'est enregistrée par **toutes** les conventions qu'à partir du tag `0.0.20`) — alignement vérifié par lecture des deux settings
+| Compilation / test | **aucun lancé** (Local = Build, Tests = CI ; session documentaire)
+| Double canal `education.cccp:*` | ✅ aucun (`central` n'est qu'une branche de settings)
+| Secret | ✅ aucun
+|===
+
+== Reste / observation (hors périmètre, non modifié)
+
+`flow-plugin/build.gradle.kts:12` conserve
+`implementation(platform("com.github.cccp-education.workspace-bom:workspace-bom:0.0.136"))` :
+même classe de constat **D5** que la réparation `bureau` (`d0e302b`). La
+plateforme est aujourd'hui **inerte** (les dépendances résolues sont versionnées
+par le plugin Kotlin / le catalogue) ; à traiter dans une session GBL-014 dédiée.
+Cette clôture ne modifie aucun code.
+
+== Fichiers touchés (documentation uniquement)
+
+`.agents/sessions/004-gbl-014-5-channel-conditional-settings.adoc`,
+`.agents/SESSIONS_HISTORY.adoc`, `.agents/INDEX.adoc`, `BACKLOG.adoc`,
+`.agents/archives/COMPLETED_TASKS_ARCHIVE_2026-11.adoc`, `PROMPT_REPRISE.adoc`.
+
+== Suite
+
+La clôture prend `004` (le dernier rapport était `003`, EAGER) ; **FLW-2**
+(`flowStatus`) passe à la **session 005**. Aucun test, aucune publication,
+aucun secret.

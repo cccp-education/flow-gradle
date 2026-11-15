@@ -5,9 +5,10 @@ _Règles absolues_ : voir `AGENT.adoc`
 _DAG_ : N4 — Plugin Gradle d'orchestration merge/close/CI
 _Dépendance N4_ : ticket-gradle (compileOnly), review-gradle (compileOnly)
 
+_Derniere mise a jour : 2026-11-15 — Session 004 — GBL-014-5 : settings conditionnels `-Pchannel` (défaut `jitpack`, JitPack repo + shim seulement en `jitpack`) + shim conventions `0.0.19` (GBL-014-4)_
 _Dernière mise à jour_ : 2026-11-13 (Session 002 — CNV-17 : JitPack **canal unique** des artefacts publics ; shim `conventions-plugin:0.0.17`, BOM `0.0.136`, coordonnée `flow-plugin:0.0.1`.)
-_Session terminée_ : 002 — CNV-17 JitPack canal unique (documentation) ✅ TERMINÉ
-_Prochaine session_ : 003 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge
+_Session terminée_ : 004 — GBL-014-5 / GBL-014-4 : settings conditionnels au canal, shim `0.0.19` ✅ TERMINÉ
+_Prochaine session_ : 005 — flowStatus (EPIC FLW-2) : statut complet du flow ticket→PR→review→merge
 
 == Roadmap
 

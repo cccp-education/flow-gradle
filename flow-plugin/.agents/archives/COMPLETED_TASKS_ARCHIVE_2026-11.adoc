@@ -1,3 +1,4 @@
 = COMPLETED TASKS ARCHIVE — 2026-11
 
 * Session 003 — EAGER : publication JitPack canal unique (AGENT/PROMPT_REPRISE alignés ; Central/Portal retirés) — 2026-11-14.
+* Session 004 — GBL-014-5 / GBL-014-4 : `settings.gradle.kts` conditionnels `-Pchannel` (défaut `jitpack`), shim conventions `0.0.19` ; aucun code, aucun test — 2026-11-15.

@@ -3,6 +3,7 @@
 
 _Date création_ : 2026-06-01
 _Version_ : 0.1.0-SNAPSHOT
+_Dernière mise à jour_ : 2026-11-15 (session 004 — GBL-014-5 / GBL-014-4)
 
 '''
 == Vision Produit
@@ -93,3 +94,13 @@ et le pipeline CI (runner-gradle).
 * `FLW-2` (`flowStatus`) reste ouvert ; reporté en session 003 (collision
   préexistante du numéro 001).
 * Rapport : `.agents/sessions/002-cnv-17-jitpack-channel.adoc`
+
+== Historique — Session 004 — GBL-014-5 / GBL-014-4 (canal dual)
+
+* `settings.gradle.kts` (racine + sous-build) conditionnels `-Pchannel`
+  (défaut `jitpack` ; JitPack repo + shim seulement en `jitpack`).
+* Shim conventions `0.0.18` → `0.0.19` ; `verifyChannel` absente à ce tag
+  (généralisée à toutes les conventions en `0.0.20`).
+* Aucun code Kotlin, aucun test, aucune publication.
+* `FLW-2` reste ouvert ; reporté en session 005.
+* Rapport : `.agents/sessions/004-gbl-014-5-channel-conditional-settings.adoc`

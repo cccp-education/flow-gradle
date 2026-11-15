@@ -1,31 +1,29 @@
-= PROMPT_REPRISE — flow-gradle (Oakland) — Session 002 (close) — CNV-17 JitPack canal unique
-:session: 002
-:date: 2026-11-13
+= PROMPT_REPRISE — flow-gradle (Oakland) — Session 004 (close) — GBL-014-5 / GBL-014-4
+:session: 004
+:date: 2026-11-15
 :etat: TERMINÉE
-:epic_actif: CNV-17 (JitPack canal unique) — clôture documentaire
-:epic_suivant: FLW-2 (flowStatus) — session 003
+:epic_actif: GBL-014 (canal dual) — rollout settings + shim
+:epic_suivant: FLW-2 (flowStatus) — session 005
 
-== Session 002 terminée — CNV-17 (JitPack canal unique)
+== Session 004 terminée — canal conditionnel
 
-Décision pilote : « la totalité vers JitPack ». JitPack est le **canal unique**
-des artefacts publics ; Maven Central (nmcp) et le Gradle Plugin Portal ne sont
-plus publiés pour `foundry/public/**`. Un artefact = un canal = un nom = une
-version. `foundry/private/**` et `office/**` exclus.
+* `settings.gradle.kts` (racine **et** `flow-plugin/`) : repository JitPack et
+  shim `useModule` (`education.cccp.build.*`) déclarés **seulement** si
+  `-Pchannel=jitpack` (défaut) ; `dependencyResolutionManagement` JitPack idem.
+* Shim conventions repointé `0.0.19`. `verifyChannel` n'existe pas à ce tag
+  (la tâche est enregistrée par **toutes** les conventions à partir de `0.0.20`) :
+  l'alignement se vérifie par lecture des settings.
+* Aucun code Kotlin, aucun test, aucune publication, aucun secret.
+* Rapport : `.agents/sessions/004-gbl-014-5-channel-conditional-settings.adoc`.
 
-* Shim `useModule` : `education.cccp.build.*` →
-  `com.github.cccp-education.conventions-gradle:conventions-plugin:0.0.17`
-  (racine `flow-gradle` + sous-build `flow-plugin`).
-* Plateforme N0 : `com.github.cccp-education.workspace-bom:workspace-bom:0.0.136`.
-* Coordonnée servie : `com.github.cccp-education.flow-gradle:flow-plugin:0.0.1`.
-* Aucune CI déclenchée (pas de workflow) ; aucun test local (Local = Build,
-  Tests = CI). Zéro code Kotlin modifié.
+== Observation (non corrigée)
 
-*Rapport* : `.agents/sessions/002-cnv-17-jitpack-channel.adoc`
+`flow-plugin/build.gradle.kts:12` importe le BOM **JitPack** via
+`platform(...)` : même classe de constat **D5** que la réparation `bureau`
+(`d0e302b`). Inerte aujourd'hui (versions du plugin Kotlin / catalogue) ; à
+traiter dans une session GBL-014 dédiée.
 
-*Note* : collision préexistante du numéro `001` (dev stub + miroir CNV-16) —
-la clôture prend `002` et `FLW-2` passe en `003`.
-
-== Prochaine mission (session 003) — FLW-2 flowStatus
+== Prochaine mission (session 005) — FLW-2 flowStatus
 
 Statut complet du flow ticket→PR→review→merge.
 
@@ -39,5 +37,5 @@ Statut complet du flow ticket→PR→review→merge.
 - DAG N4 — consomme ticket-gradle + review-gradle (compileOnly)
 - Merge sous contrôle humain (`flowMerge` exige une PR approved)
 - `GITHUB_TOKEN` en variable d'environnement uniquement
-- Publication : JitPack uniquement (tag `vX.Y.Z`, version servie `X.Y.Z`)
+- Publication : canal **dual** `-Pchannel` (défaut `jitpack`) ; un tag = un commit
 - Local = Build, Tests = CI ; commits autorisés (décision pilote 2026-11-11)

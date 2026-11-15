@@ -3,6 +3,7 @@
 | # | Date | Type | Sujet | Score
 | 000 | 2026-06-01 | bootstrap | FLW-0 — Bootstrap | ✅ TERMINÉ
 | 001 | 2026-07-03 | dev | Plugin stub créé CNV-6 natif — 4 convention plugins education.cccp.build.* v0.0.1 appliquées dès la création, compileKotlin SUCCESS | ✅ TERMINÉ
+| 004 | 2026-11-15 | build | GBL-014-5 / GBL-014-4 — settings conditionnels `-Pchannel` + shim conventions `0.0.19` (aucun code) | ✅ TERMINÉ
 |===
 
 == Session 001 — JitPack mirror (CNV-16) — 2026-11-09
@@ -27,3 +28,12 @@ préexistante du numéro 001). Rapport
 Alignement EAGER : JitPack canal unique ; Maven Central/Sonatype et
 Gradle Plugin Portal **retirés**. Aucun code, aucun test, aucune
 publication. Rapport `.agents/sessions/003-eager-publication-jitpack-only.adoc`.
+
+== Session 004 — GBL-014-5 / GBL-014-4 : settings conditionnels — 2026-11-15
+
+`settings.gradle.kts` (racine + sous-build) conditionnels `-Pchannel` (défaut
+`jitpack` ; JitPack repo + shim seulement en `jitpack`) ; shim conventions
+`0.0.19`. `verifyChannel` absente à ce tag (généralisée à toutes les
+conventions en `0.0.20`). Aucune CI, aucun test, aucune publication. `FLW-2`
+reporté en session 005. Rapport
+`.agents/sessions/004-gbl-014-5-channel-conditional-settings.adoc`.
